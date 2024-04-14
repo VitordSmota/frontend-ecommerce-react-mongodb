@@ -37,7 +37,7 @@ const ProductDisplay = (props) => {
                 </div>
                 <div className="productdisplay-right-size">
                     <h1>Select size</h1>
-                    <div className="productdisplay-right">
+                    <div className="productdisplay-right-sizes">
                         <div>S</div>
                         <div>M</div>
                         <div>L</div>
