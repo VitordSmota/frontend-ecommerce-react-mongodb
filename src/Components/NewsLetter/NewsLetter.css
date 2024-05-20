@@ -8,7 +8,7 @@
     margin: auto;
     padding: 0px 140px;
     margin-bottom: 150px;
-    background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
+    background: linear-gradient(180deg, rgb(236, 239, 241), #e1ffea22 60%);
     gap: 30px;
 }
 .newsletter h1{
@@ -43,11 +43,11 @@
 .newsletter div button{
     width: 210px;
     height: 70px;
-    border-radius: 80px;
     background: black;
     color: white;
     font-size: 16px;
     cursor: pointer;
+    border: none;
 }
 
 @media(max-width:1280px){

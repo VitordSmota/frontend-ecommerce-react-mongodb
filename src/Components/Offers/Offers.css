@@ -5,7 +5,7 @@
     margin: auto;
     padding: 0px 140px;
     margin-bottom: 150px;
-    background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60% );
+    background: linear-gradient(180deg, rgb(236, 239, 241) 0%, #e1ffea22 60% );
 
 }
 .offers-left{
@@ -28,8 +28,7 @@
 .offers-left button{
     width: 282px;
     height: 70px;
-    border-radius: 35px;
-    background: #ff4141;
+    background: #111111;
     border: none;
     color: white;
     font-size: 22px;
