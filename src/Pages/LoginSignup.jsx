@@ -7,7 +7,7 @@ const LoginSignup = () => {
     const login = async () => {
         console.log("Login Function Executed", formData)
         let responseData;
-        await fetch('http://localhost:4000/login', {
+        await fetch('https://api-ecommerce-react-mongodb.onrender.com/login', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -29,7 +29,7 @@ const LoginSignup = () => {
         console.log("Sign up Function Executed", formData)
 
         let responseData;
-        await fetch('http://localhost:4000/signup', {
+        await fetch('https://api-ecommerce-react-mongodb.onrender.com/signup', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',

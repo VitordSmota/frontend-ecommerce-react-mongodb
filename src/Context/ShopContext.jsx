@@ -21,13 +21,13 @@ const ShopContextProvider = (props) => {
     const [cartItems, setCartItems] = useState(getDefaultCart())
 
     useEffect(() => {
-        fetch('http://localhost:4000/product/all')
+        fetch('https://api-ecommerce-react-mongodb.onrender.com/product/all')
             .then((resp) => resp.json())
             .then((data) => setAllProduct(data));
 
         if (localStorage.getItem('auth-token')) {
             console.log("cartshopping")
-            fetch('http://localhost:4000/cart/shoppingcart', {
+            fetch('https://api-ecommerce-react-mongodb.onrender.com/cart/shoppingcart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -45,7 +45,7 @@ const ShopContextProvider = (props) => {
     const addToCart = (itemId) => {
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }))
         if (localStorage.getItem('auth-token')) {
-            fetch('http://localhost:4000/cart/add', {
+            fetch('https://api-ecommerce-react-mongodb.onrender.com/cart/add', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -61,7 +61,7 @@ const ShopContextProvider = (props) => {
     const removeFromCart = (itemId) => {
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }))
         if (localStorage.getItem('auth-token')) {
-            fetch('http://localhost:4000/cart/remove', {
+            fetch('https://api-ecommerce-react-mongodb.onrender.com/cart/remove', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
