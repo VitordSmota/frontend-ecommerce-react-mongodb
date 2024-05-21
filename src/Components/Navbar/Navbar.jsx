@@ -7,6 +7,9 @@ import { ShopContext } from "../../Context/ShopContext";
 import nav_dropdown from '../Assets/nav_dropdown.png'
 
 
+
+
+
 const Navbar = () => {
 
   const [menu, setMenu] = useState("shop");
@@ -16,6 +19,8 @@ const Navbar = () => {
     menuRef.current.classList.toggle('nav-menu-visible');
     e.target.classList.toggle('open');
   }
+  
+
 
   return (
     <div className="navbar">
@@ -32,8 +37,21 @@ const Navbar = () => {
       </ul>
 
       <div className="nav-login-cart">
+        
+        {
+          (localStorage.getItem('id') === 'true')
+            ? <a href="https://admin-panel-project-react-mongodb.onrender.com/" target="blank">
+            <button>Admin</button>
+            </a>
+            :<></>
+        }
+       
         {localStorage.getItem('auth-token')
-          ? <button onClick={() => { localStorage.removeItem("auth-token"); window.location.replace('/') }}>Logout</button>
+          ? <button onClick={() => {
+            localStorage.removeItem("auth-token");
+            localStorage.removeItem("id");
+            window.location.replace('/')
+          }}>Logout</button>
           : <Link to='/login'><button>Login</button></Link>}
         <Link to='/cart'><img src={cart_icon} alt="" /></Link>
         <div className="nav-cart-count">{getTotalCartItems()}</div>

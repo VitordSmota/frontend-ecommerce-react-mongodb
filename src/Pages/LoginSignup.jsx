@@ -3,11 +3,13 @@ import './CSS/LoginSignup.css'
 const LoginSignup = () => {
 
     const [state, setState] = useState("Login");
+    
+    let isAdmin;
 
     const login = async () => {
         console.log("Login Function Executed", formData)
         let responseData;
-        await fetch('https://api-ecommerce-react-mongodb.onrender.com/login', {
+        await fetch('http://localhost:4000/login', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -19,17 +21,20 @@ const LoginSignup = () => {
         if (responseData.success) {
             localStorage.setItem('auth-token', responseData.token);
             window.location.replace("/");
+            isAdmin = (responseData.id === "664b84edaf0be7bb55592d9c")
+            localStorage.setItem('id', isAdmin);
+
         }
         else {
             alert(responseData.errors)
         }
     }
-
+    
     const signup = async () => {
         console.log("Sign up Function Executed", formData)
 
         let responseData;
-        await fetch('https://api-ecommerce-react-mongodb.onrender.com/signup', {
+        await fetch('http://localhost:4000/signup', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -41,6 +46,8 @@ const LoginSignup = () => {
         if (responseData.success) {
             localStorage.setItem('auth-token', responseData.token);
             window.location.replace("/");
+            isAdmin = (responseData.id === "664b84edaf0be7bb55592d9c")
+            localStorage.setItem('id', isAdmin);
         }
         else {
             alert(responseData.errors)
