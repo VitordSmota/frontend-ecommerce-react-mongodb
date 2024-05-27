@@ -21,7 +21,7 @@ const LoginSignup = () => {
         if (responseData.success) {
             localStorage.setItem('auth-token', responseData.token);
             window.location.replace("/");
-            isAdmin = (responseData.id === "664b84edaf0be7bb55592d9c")
+            isAdmin = (responseData.id === "664b84edaf0be7bb55592d9c" || responseData.id === "66654bc6347a110f4d132c85a")
             localStorage.setItem('id', isAdmin);
 
         }
